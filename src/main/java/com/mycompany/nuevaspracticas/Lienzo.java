@@ -7,19 +7,32 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 
-public class Lienzo extends JPanel implements ActionListener {
+public final class Lienzo extends JPanel implements ActionListener {
     private int x = 20;
     private int y = 20;
     private int dx = 5;
     private int dy = 5;
     private final int RADIO = 50;
     Timer timer;
+    JButton Iniciar;
+    JButton Fin;
+   
+    
     public Lienzo(){
     setLayout(null);
     setBounds(20, 10, 750, 450);
     setBorder(new EtchedBorder());
+    Iniciar= new JButton("Inicio");
+    Iniciar.setBounds(80, 80, 50, 50);
+    Iniciar.setBackground(Color.red);
+    Iniciar.setForeground(Color.white);
+    
+    add(Iniciar);
+
     rebote();
-    HOla();
+    
+    
+    
     }
     @Override
     public void paint(Graphics g){
@@ -43,7 +56,5 @@ public class Lienzo extends JPanel implements ActionListener {
         timer.start();
     }
     
-    public void HOla(){
-        System.out.println("Hola, mundo!");
-    }
+   
 }
