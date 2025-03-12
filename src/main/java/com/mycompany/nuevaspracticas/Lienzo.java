@@ -19,6 +19,7 @@ public class Lienzo extends JPanel implements ActionListener {
     setBounds(20, 10, 750, 450);
     setBorder(new EtchedBorder());
     rebote();
+    HOla();
     }
     @Override
     public void paint(Graphics g){
@@ -40,5 +41,9 @@ public class Lienzo extends JPanel implements ActionListener {
     public void rebote(){
         timer = new Timer(5, this);
         timer.start();
+    }
+    
+    public void HOla(){
+        System.out.println("Hola, mundo!");
     }
 }
