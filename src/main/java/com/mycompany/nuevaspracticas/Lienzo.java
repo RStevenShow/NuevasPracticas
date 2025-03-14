@@ -14,22 +14,27 @@ public final class Lienzo extends JPanel implements ActionListener {
     private int dy = 5;
     private final int RADIO = 50;
     Timer timer;
-    JButton Iniciar;
-    JButton Fin;
+    JButton iniciar;
+    JButton Finalizar;
    
     
     public Lienzo(){
     setLayout(null);
     setBounds(20, 10, 750, 450);
     setBorder(new EtchedBorder());
-    Iniciar= new JButton("Inicio");
-    Iniciar.setBounds(80, 80, 50, 50);
-    Iniciar.setBackground(Color.red);
-    Iniciar.setForeground(Color.white);
     
-    add(Iniciar);
+    iniciar = new JButton("INICIAR");
+    Finalizar = new JButton("FINALIZAR");
+    iniciar.setBounds(20, 400, 100, 30);
+    Finalizar.setBounds(130, 400, 100, 30);
+    iniciar.setBackground(Color.GREEN);
+    iniciar.setForeground(Color.white);
+    add(iniciar);
+    add(Finalizar);
+    iniciar.addActionListener(this);
+    Finalizar.addActionListener(this);
 
-    rebote();
+    
     
     
     
@@ -50,11 +55,23 @@ public final class Lienzo extends JPanel implements ActionListener {
         if(y <= 0 || y + RADIO >= this.getHeight())
             dy *= -1;
         repaint();
+        
+        
+        if (e.getSource()==iniciar) 
+            
+            rebote();
+        
+        if (e.getSource() ==Finalizar) {
+           timer.stop( );
+        }
+            
+        
     }
     public void rebote(){
         timer = new Timer(5, this);
         timer.start();
     }
+    
     
    
 }
