@@ -1,6 +1,7 @@
 package com.mycompany.nuevaspracticas;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +30,10 @@ public final class Lienzo extends JPanel implements ActionListener {
     Finalizar.setBounds(130, 400, 100, 30);
     iniciar.setBackground(Color.GREEN);
     iniciar.setForeground(Color.white);
+
+    Finalizar.setBackground(Color.red);
+    Finalizar.setForeground(Color.white);
+    
     add(iniciar);
     add(Finalizar);
     iniciar.addActionListener(this);
